@@ -1,0 +1,32 @@
+﻿<Page xmlns:UI="using:Microsoft.Advertising.WinRT.UI" 
+    x:Class="LittleNotes.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LittleNotes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <AppBar Height="122">
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton x:Name="SaveClose" Icon="Accept" Label="Save and Close" Click="SaveClose_Click" Height="118"/>
+                <AppBarButton HorizontalAlignment="Stretch" Label="Delete Selected" VerticalAlignment="Stretch" Icon="Delete" Click="AppBarButton_Click"/>
+                <AppBarButton x:Name="Save" HorizontalAlignment="Stretch" Icon="Save" Label="Save" VerticalAlignment="Stretch" Click="Save_Click"/>
+                <AppBarButton x:Name="Close" HorizontalAlignment="Stretch" Icon="Cancel" Label="Close" VerticalAlignment="Stretch" Click="Close_Click"/>
+
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <GridView x:Name="NotesGrid" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="1366" SelectionChanged="NotesGrid_SelectionChanged">
+            <Button x:Name="NewNoteBtn" Content="New Note" Width="250" Height="125" FontSize="30" Click="NewNoteBtn_Click"/>
+           
+        </GridView>
+        <TextBox x:Name="Notepad" HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="704" Width="1304" AcceptsReturn="True" Visibility="Collapsed" />
+        <UI:AdControl ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab" AdUnitId="10043104" Height="250" Width="250" Margin="1232,10,-116,508"/>
+
+
+    </Grid>
+</Page> 
